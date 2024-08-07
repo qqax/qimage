@@ -1,8 +1,6 @@
 package qimage
 
 type Imager interface {
-	//Read(ctx context.Context) error
-
 	SetID(id uint32)
 
 	SetName(name string)
