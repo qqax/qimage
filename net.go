@@ -34,7 +34,7 @@ func ReadFromMultipart(fileHeader *multipart.FileHeader, i *Imager, allowedFileT
 
 	filetype := http.DetectContentType(raw)
 
-	if !slices.Contains(allowedFileTypes, filetype) {
+	if len(allowedFileTypes) > 0 && !slices.Contains(allowedFileTypes, filetype) {
 		return errors.New("the provided file format is not allowed")
 	}
 
